@@ -14,7 +14,7 @@ const app = express();
 
 // Database
 mongoose.Promise = global.Promise;
-mongoose.connect('mongodb://localhost:27017/csec472', function(err) {
+mongoose.connect('mongodb://localhost:27017/stacksloth', function(err) {
   if (err) {
       console.err(err);
   } else {
@@ -26,13 +26,13 @@ mongoose.connect('mongodb://localhost:27017/csec472', function(err) {
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 
-// Point static path to dist (angularjs)
+// Point static path to dist
 app.use(express.static(path.join(__dirname, 'dist')));
 
 // Set our api routes
 app.use('/api', api);
 
-// Catch all other routes and return the index file for angular routing
+// Catch all other routes and return the index file
 app.get('*', (req, res) => {
   res.sendFile(path.join(__dirname, 'dist/index.html'));
 });
@@ -40,7 +40,7 @@ app.get('*', (req, res) => {
 /**
  * Get port from environment and store in Express.
  */
-const port = process.env.PORT || '80';
+const port = process.env.PORT || '8080';
 app.set('port', port);
 
 /**

@@ -1,17 +1,125 @@
 <app-nav></app-nav>
-
-<div class="posts">
-  <table>
-    <tbody ng-repeat="">
-      <tr>
-        <th scope="row">{{ $index }}</th>
-        <td>{{ item.title }}</td>
-        <td>{{ item.sku }}</td>
-        <td>${{ item.salePrice }}</td>
-        <td>${{ item.purchCost }}</td>
-        <td>{{ item.quantity }}</td>
-        <td>{{ item.details }}</td>
-      </tr>
-    </tbody>
-  </table>
+<div class="container-fluid">
+  <section>
+    <div id="wrapper">
+      <div id="transparency">
+        <div class="col-md-12">
+          <div class="header-hero col-md-10 col-md-offset-1">
+            <h1>We're a <b>web development, mobile development, and managed web hosting</b> company specializing in solutions
+              for small businesses.</h1>
+            <div id="get-started">
+              <button id="start" class="btn btn-main get-started">Start a Project</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="info info-primary col-md-12 text-center">
+      <div class="info-title">
+        <h5>START OFF ON THE RIGHT FOOT</h5>
+      </div>
+      <div class="info-body col-md-8 col-md-offset-2">
+        <p>Digital products can be complicated and it's easy to get lost in the mess of technologies involved in producing it.
+          We're the experts who can take care of your project every step of the way. With years of experience designing and
+          building websites, web applications, Android applications, iOS applications, and the setting up the servers that
+          process all of the application data, no job is too large for us.</p>
+      </div>
+    </div>
+  </section>
+  <div class="container-fluid">
+    <section>
+      <div class="col-md-12 info text-center">
+        <div class="info-title">
+          <h5>THINGS WE DO</h5>
+        </div>
+        <div class="info-body">
+          <div class="col-md-4">
+            <div class="info-title">
+              <h3>WEB DEVELOPMENT</h3>
+            </div>
+            <div class="info-body">
+              <p>We utilize modern web technologies and frameworks to build beautiful websites that are effective in increasing
+                sales.
+              </p>
+              <a href="services" class="btn">Learn More</a>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="info-title">
+              <h3>MOBILE DEVELOPMENT</h3>
+            </div>
+            <div class="info-body">
+              <p>With years of experience building Android and iOS apps, we can help your business bring your next project to
+                life.
+              </p>
+              <a href="services" class="btn ">Learn More</a>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="info-title">
+              <h3>WEB HOSTING</h3>
+            </div>
+            <div class="info-body">
+              <p>We help clients save hundreds per year, as well as time, with our professionally managed web hosting solution.</p>
+              <a href="services" class="btn">Learn More</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section>
+      <div id="contact" class="info info-dark col-md-12">
+        <div class="col-md-8">
+          <h1>Drop us a line!</h1>
+          <div *ngIf="isSuccess" id="form-success" class="alert alert-success">
+            <strong>It worked!</strong> We got your message and we'll respond within 12 hours.
+          </div>
+          <div *ngIf="isFailure" id="form-failure" class="alert alert-danger">
+            <strong>Oh no!</strong> Something went wrong.
+          </div>
+          <div *ngIf="isIncomplete" id="form-incomplete" class="alert alert-warning">
+            You have some required fields that need to be filled out.
+          </div>
+          <form id="contact-form" (ngSubmit)="sendForm()">
+            <div class="form-group">
+              <div class="col-md-4">
+                <label for="name">Your name *</label>
+                <input type="name" class="form-control" id="name" name="name" [(ngModel)]="model.name">
+              </div>
+              <div class="col-md-4">
+                <label for="email">Email address *</label>
+                <input type="email" class="form-control" id="email" name="email" [(ngModel)]="model.email">
+              </div>
+              <div class="col-md-4">
+                <label for="phone">Phone number</label>
+                <input type="phone" class="form-control" id="phone" name="phone" [(ngModel)]="model.phone">
+              </div>
+            </div>
+            <div class="form-group">
+              <div class="col-md-12" style="padding-top:10px;">
+                <label for="message">What's up? *</label>
+                <textarea type="textarea" class="form-control" id="message" rows="4" name="message" [(ngModel)]="model.message"></textarea>
+              </div>
+            </div>
+            <div class="col-md-3" style="padding-top:10px;">
+              <button class="btn btn-main">Submit</button>
+            </div>
+          </form>
+        </div>
+        <div id="lower-contact" class="col-md-4">
+          <p>StackSloth is a boutique software development company specializing in web and mobile solutions for e-commerce and
+            small businesses.
+          </p>
+        </div>
+      </div>
+    </section>
+  </div>
+  <div id="footer" class="container-fluid">
+    <section>
+      <div class="idk text-center">
+        <p>Copyright &copy; StackSloth 2017.</p>          
+      </div>
+    </section>
+  </div>
 </div>
+<!-- /.container -->

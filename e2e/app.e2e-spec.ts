@@ -1,10 +1,10 @@
-import { SickNastyPage } from './app.po';
+import { StackSlothNgPage } from './app.po';
 
-describe('sick-nasty App', function() {
-  let page: SickNastyPage;
+describe('stack-sloth-ng App', function() {
+  let page: StackSlothNgPage;
 
   beforeEach(() => {
-    page = new SickNastyPage();
+    page = new StackSlothNgPage();
   });
 
   it('should display message saying app works', () => {

@@ -1,6 +1,6 @@
 import { browser, element, by } from 'protractor';
 
-export class SickNastyPage {
+export class StackSlothNgPage {
   navigateTo() {
     return browser.get('/');
   }

@@ -1,9 +1,12 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterModule, Routes } from '@angular/router';
+import { LoginComponent } from '../login/login.component';
+import { RegisterComponent } from '../register/register.component';
+import { DashboardComponent } from '../dashboard/dashboard.component';
 import { IndexComponent } from '../index/index.component';
-import { LoginComponent } from 'app/login/login.component';
-import { RegisterComponent } from 'app/register/register.component';
+import { ServicesComponent } from '../services/services.component';
+
 
 const routes: Routes = [
   {
@@ -11,16 +14,24 @@ const routes: Routes = [
       component: IndexComponent,
   },
   {
-    path: 'login',
-    component: LoginComponent
+      path: 'login',
+      component: LoginComponent,
   },
   {
     path: 'register',
-    component: RegisterComponent
+    component: RegisterComponent,
   },
   {
-    path: "**",
-    component: IndexComponent
+    path: 'dashboard',
+    component: DashboardComponent
+  },
+  {
+    path: 'services',
+    component: ServicesComponent
+  },
+  {
+    path: '**',
+    component: IndexComponent,
   }
 ];
 

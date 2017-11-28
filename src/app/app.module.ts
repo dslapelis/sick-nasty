@@ -5,9 +5,12 @@ import { HttpModule } from '@angular/http';
 
 import { AppComponent } from './app.component';
 import { LoginComponent } from './login/login.component';
-import { IndexComponent } from './index/index.component';
 import { AppRoutingModule } from './app-routing/app-routing.module';
+import { IndexComponent } from './index/index.component';
 import { RegisterComponent } from './register/register.component';
+import { AuthenticationService } from './authentication.service';
+import { DashboardComponent } from './dashboard/dashboard.component';
+import { ServicesComponent } from './services/services.component';
 import { NavComponent } from './nav/nav.component';
 
 
@@ -16,9 +19,10 @@ import { NavComponent } from './nav/nav.component';
     AppComponent,
     LoginComponent,
     IndexComponent,
-    LoginComponent,
     RegisterComponent,
-    NavComponent
+    DashboardComponent,
+    ServicesComponent,
+    NavComponent,
   ],
   imports: [
     BrowserModule,
@@ -26,7 +30,9 @@ import { NavComponent } from './nav/nav.component';
     HttpModule,
     AppRoutingModule
   ],
-  providers: [],
+  providers: [
+    AuthenticationService,
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

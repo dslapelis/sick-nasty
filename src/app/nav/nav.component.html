@@ -18,9 +18,7 @@
         <ul class="nav navbar-nav">
         </ul>
         <ul class="nav navbar-nav navbar-right">
-          <li><a href="#">OUR WORK</a></li>
-          <li><a href="#">CONTACT US</a></li>
-          <li *ngIf="!isLoggedIn"><a href="register">GET HOSTING</a></li>
+          <li *ngIf="!isLoggedIn"><a href="register">REGISTER</a></li>
           <li *ngIf="!isLoggedIn"><a href="login">LOGIN</a></li>
           <li *ngIf="isLoggedIn"><a href="dashboard">DASHBOARD</a>
             <li>

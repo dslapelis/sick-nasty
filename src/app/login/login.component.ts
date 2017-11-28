@@ -9,14 +9,16 @@ import { Router, ActivatedRoute } from '@angular/router';
 })
 export class LoginComponent implements OnInit {
   model: any = {};
-  returnUrl: string;  
+  returnUrl: string;
+  notIncorrect: boolean;
 
   constructor(
     private authenticationService: AuthenticationService,
     private router: Router) { }
 
   ngOnInit() {
-    this.returnUrl = 'dashboard';    
+    this.returnUrl = 'dashboard';
+    this.notIncorrect = true;   
   }
 
   login() {
@@ -24,7 +26,7 @@ export class LoginComponent implements OnInit {
       .subscribe(data => {
         this.router.navigate([this.returnUrl]);
       },
-      error => {});
+      error => {this.notIncorrect = false;});
   }
 
 }

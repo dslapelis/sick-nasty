@@ -25,13 +25,12 @@ export class AuthenticationService {
       });
   }
 
-  register(email: string, name: string, password: string) {
+  register(name: string, email: string, password: string) {
     let body = JSON.stringify({ name: name, email: email, password: password });
     let headers = new Headers({ 'Content-Type': 'application/json' });
     let options = new RequestOptions({ headers: headers });
     return this.http.post('/api/authentication/register', body, options)
       .map((response: Response) => {
-        // login successful if there's a jwt token in the response
         let user = response.json();
         if(user.success) {
           console.log('Success');

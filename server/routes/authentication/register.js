@@ -16,7 +16,7 @@ module.exports = (req, res) => {
             name: req.body.name,
             password: hashedPassword,
             email: req.body.email,
-            dateJoined: Date.now(),
+            dateJoined: Date.now()
           });
 
           // we create the user if they don't exist
@@ -24,6 +24,8 @@ module.exports = (req, res) => {
             if (err) {
               console.log(err);
               res.status(400).json({ success: false });
+            } else {
+              res.status(200).json({ success: true });
             }
           });
 

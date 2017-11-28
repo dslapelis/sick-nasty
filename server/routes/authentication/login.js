@@ -9,7 +9,6 @@ module.exports = (req, res) => {
         email: req.body.email
     }, function(err, user) {
         if (err) throw err;
-
         if(!user) {
             res.status(401).json({ success: false, message: 'Authentication failed. Invalid username or password.' });
             console.log('FAILED -- user not found.');

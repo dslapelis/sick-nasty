@@ -7,13 +7,18 @@ import { AppComponent } from './app.component';
 import { LoginComponent } from './login/login.component';
 import { IndexComponent } from './index/index.component';
 import { AppRoutingModule } from './app-routing/app-routing.module';
+import { RegisterComponent } from './register/register.component';
+import { NavComponent } from './nav/nav.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
-    IndexComponent
+    IndexComponent,
+    LoginComponent,
+    RegisterComponent,
+    NavComponent
   ],
   imports: [
     BrowserModule,

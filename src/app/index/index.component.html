@@ -1,3 +1,17 @@
-<p>
-  index works!
-</p>
+<app-nav></app-nav>
+
+<div class="posts">
+  <table>
+    <tbody ng-repeat="">
+      <tr>
+        <th scope="row">{{ $index }}</th>
+        <td>{{ item.title }}</td>
+        <td>{{ item.sku }}</td>
+        <td>${{ item.salePrice }}</td>
+        <td>${{ item.purchCost }}</td>
+        <td>{{ item.quantity }}</td>
+        <td>{{ item.details }}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>

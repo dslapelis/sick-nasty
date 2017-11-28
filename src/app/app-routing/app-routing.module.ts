@@ -6,6 +6,7 @@ import { RegisterComponent } from '../register/register.component';
 import { DashboardComponent } from '../dashboard/dashboard.component';
 import { IndexComponent } from '../index/index.component';
 import { ServicesComponent } from '../services/services.component';
+import { LoginGuard } from '../login-guard';
 
 
 const routes: Routes = [
@@ -23,7 +24,8 @@ const routes: Routes = [
   },
   {
     path: 'dashboard',
-    component: DashboardComponent
+    component: DashboardComponent,
+    canActivate: [LoginGuard]
   },
   {
     path: 'services',

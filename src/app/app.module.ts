@@ -12,6 +12,7 @@ import { AuthenticationService } from './authentication.service';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { ServicesComponent } from './services/services.component';
 import { NavComponent } from './nav/nav.component';
+import { LoginGuard } from './login-guard';
 
 
 @NgModule({
@@ -32,6 +33,7 @@ import { NavComponent } from './nav/nav.component';
   ],
   providers: [
     AuthenticationService,
+    LoginGuard
   ],
   bootstrap: [AppComponent]
 })
